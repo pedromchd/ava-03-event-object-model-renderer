@@ -1,4 +1,18 @@
 const atm = { // DESENVOLVA AQUI O OBJETO ATM
+  numeroSerie: 2344499,
+  valor: 0,
+  notas5: 0,
+  notas10: 0,
+  notas20: 0,
+  notas50: 0,
+  notas100: 0,
+  limiteCedulas: 100,
+  abastecerCedulas(qnt, ced) {
+
+  },
+  retirarValor(val) {
+
+  }
 }
 
 console.log(atm.numeroSerie) // 2344499
