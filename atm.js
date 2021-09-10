@@ -6,7 +6,7 @@ const atm = { // DESENVOLVA AQUI O OBJETO ATM
   notas20: 0,
   notas50: 0,
   notas100: 0,
-  limiteCedulas: 100,
+  // maxCedulas: 100,
   abastecerCedulas(qnt, ced) {
 
   },
