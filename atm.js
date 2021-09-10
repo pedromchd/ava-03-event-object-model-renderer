@@ -1,14 +1,25 @@
 const atm = { // DESENVOLVA AQUI O OBJETO ATM
   numeroSerie: 2344499,
-  valor: 0,
+  _valor: 0,
   notas5: 0,
   notas10: 0,
   notas20: 0,
   notas50: 0,
   notas100: 0,
-  // maxCedulas: 100,
+  max: 100,
+  get valor() {
+    const aux = this.notas5 * 5
+      + this.notas10 * 10
+      + this.notas20 * 20
+      + this.notas50 * 50
+      + this.notas100 * 100;
+    return this._valor = aux;
+  },
   abastecerCedulas(qnt, ced) {
-
+    const tmp = this[`notas${ced}`];
+    if (tmp === undefined) throw `Não existem cédulas de ${ced} reais`;
+    const aux = tmp + qnt;
+    this[`notas${ced}`] = (aux > this.max) ? this.max : aux;
   },
   retirarValor(val) {
 
