@@ -23,52 +23,7 @@ const atm = { // DESENVOLVA AQUI O OBJETO ATM
   },
   retirarValor(val) {
     if (val > this.valor) return 'Não há cédulas suficientes';
-    let ced = this.contarCed(val);
-    this.distribuir(ced);
-  },
-  contarCed(val) {
-    const ced = Array();
-    const int = parseInt;
-    ced.push(int(val / 100)); val %= 100;
-    ced.push(int(val / 50)); val %= 50;
-    ced.push(int(val / 20)); val %= 20;
-    ced.push(int(val / 10)); val %= 10;
-    ced.push(int(val / 5)); val %= 5;
-    return ced;
-  },
-  distribuir(ced) {
-    if (ced[0] > this.notas100) {
-      ced[1] += ced[0] - this.notas100;
-      ced[0] = this.notas100;
-    }
-    if (ced[1] > this.notas50) {
-      ced[2] += ced[1] - this.notas50;
-      ced[1] = this.notas50;
-    }
-    if (ced[2] > this.notas20) {
-      ced[3] += ced[2] - this.notas20;
-      ced[2] = this.notas20;
-    }
-    if (ced[3] > this.notas10) {
-      ced[4] += ced[3] - this.notas10;
-      ced[3] = this.notas10;
-    }
-    if (ced[4] > this.notas5) {
-      return;
-    }
-    this.notas100 -= ced[0];
-    this.notas50 -= ced[1];
-    this.notas20 -= ced[2];
-    this.notas10 -= ced[3];
-    this.notas5 -= ced[4];
-    // retirarCed(ced);
-  // },
-  // retirarCed(ced) {
-  //   this.notas100 -= ced[0];
-  //   this.notas50 -= ced[1];
-  //   this.notas20 -= ced[2];
-  //   this.notas10 -= ced[3];
-  //   this.notas5 -= ced[4];
+
   }
 }
 
