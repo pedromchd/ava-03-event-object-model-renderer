@@ -101,3 +101,18 @@ console.log(atm.valor) //  410 = 6 * 10 + 7 * 50
 // incluir casos de teste com retiradas
 // quem combinam 3 e 4 cédulas diferentes
 // ---------------------------------------------------
+// asbastecimento total
+atm.abastecerCedulas(100, 5); // 100 cédulas de R$ 5,00
+atm.abastecerCedulas(100, 10); // 100 cédulas de R$ 10,00
+atm.abastecerCedulas(100, 20); // 100 cédulas de R$ 20,00
+atm.abastecerCedulas(100, 50); // 100 cédulas de R$ 50,00
+atm.abastecerCedulas(100, 100); // 100 cédulas de R$ 100,00
+console.log(atm.notas100, atm.notas50, atm.notas20, atm.notas10, atm.notas5); // 100 100 100 100 100
+console.log(atm.valor); // 18500
+// retirada válida
+atm.retirarValor(4895); // 48 cédulas de R$ 100,00; 1 cédula de R$ 50,00; 2 cédulas de R$ 20,00 e 1 cédula de R$ 5,00
+console.log(atm.notas100, atm.notas50, atm.notas20, atm.notas10, atm.notas5); // 52 99 98 100 99
+console.log(atm.valor); // 13605
+// retirada válida
+atm.retirarValor(10985); // 52 cédulas de R$ 100,00; 99 cédulas de R$ 50,00; 41 cédulas de R$ 20,00; 1 cédulas de R$ 20,00 e 1 cédula de R$ 5,00
+console.log(atm.notas100, atm.notas50, atm.notas20, atm.notas10, atm.notas5); // 0 0 57 99 98
