@@ -7,6 +7,15 @@ const atm = { // DESENVOLVA AQUI O OBJETO ATM
   notas50: 0,
   notas100: 0,
   max: 100,
+  get notas() {
+    return [
+      this.notas100,
+      this.notas50,
+      this.notas20,
+      this.notas10,
+      this.notas5
+    ]
+  },
   get valor() {
     const aux = this.notas5 * 5
       + this.notas10 * 10
@@ -22,8 +31,57 @@ const atm = { // DESENVOLVA AQUI O OBJETO ATM
     this[`notas${ced}`] = (aux > this.max) ? this.max : aux;
   },
   retirarValor(val) {
-    if (val > this.valor) return 'Não há cédulas suficientes';
-
+    if (val > this.valor) return;
+    const ced = Array();
+    const int = parseInt;
+    let tmp = 0;
+    let aux = 0;
+    if (atm.notas[0]) {
+      tmp = int(val / 100);
+      if (tmp > atm.notas[0]) {
+        ced.push(atm.notas[0]);
+        aux = tmp - atm.notas[0];
+      } else ced.push(tmp);
+      val = (val % 100) + aux * 100;
+    } else ced.push(0);
+    if (atm.notas[1]) {
+      tmp = int(val / 50);
+      if (tmp > atm.notas[1]) {
+        ced.push(atm.notas[1]);
+        aux = tmp - atm.notas[1];
+      } else ced.push(tmp);
+      val = (val % 50) + aux * 50;
+    } else ced.push(0);
+    if (atm.notas[2]) {
+      tmp = int(val / 20);
+      if (tmp > atm.notas[2]) {
+        ced.push(atm.notas[2]);
+        aux = tmp - atm.notas[2];
+      } else ced.push(tmp);
+      val = (val % 20) + aux * 20;
+    } else ced.push(0);
+    if (atm.notas[3]) {
+      tmp = int(val / 10);
+      if (tmp > atm.notas[3]) {
+        ced.push(atm.notas[3]);
+        aux = tmp - atm.notas[3];
+      } else ced.push(tmp);
+      val = (val % 10) + aux * 10;
+    } else ced.push(0);
+    if (atm.notas[4]) {
+      tmp = int(val / 5);
+      if (tmp > atm.notas[4]) {
+        ced.push(atm.notas[4]);
+        aux = tmp - atm.notas[4];
+      } else ced.push(tmp);
+      val = (val % 5) + aux * 5;
+    } else ced.push(0);
+    if (val > 0) return;
+    this.notas100 -= ced[0];
+    this.notas50 -= ced[1];
+    this.notas20 -= ced[2];
+    this.notas10 -= ced[3];
+    this.notas5 -= ced[4];
   }
 }
 
