@@ -39,11 +39,9 @@ const atm = { // DESENVOLVA AQUI O OBJETO ATM
       } else ced.push(0);
     }
     if (val > 0) return;
-    this.notas100 -= ced[0];
-    this.notas50 -= ced[1];
-    this.notas20 -= ced[2];
-    this.notas10 -= ced[3];
-    this.notas5 -= ced[4];
+    notas.forEach((n, i) => {
+      this[`notas${n}`] -= ced[i];
+    })
   }
 }
 
