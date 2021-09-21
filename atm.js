@@ -41,9 +41,9 @@ const atm = { // DESENVOLVA AQUI O OBJETO ATM
     if (val > 0) return;
     notas.forEach((n, i) => {
       this[`notas${n}`] -= ced[i];
-    })
+    });
   }
-}
+};
 
 console.log(atm.numeroSerie) // 2344499
 atm.numeroSerie = 34883444
