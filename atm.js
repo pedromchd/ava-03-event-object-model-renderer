@@ -114,5 +114,10 @@ atm.retirarValor(4895); // 48 cédulas de R$ 100,00; 1 cédula de R$ 50,00; 2 c�
 console.log(atm.notas100, atm.notas50, atm.notas20, atm.notas10, atm.notas5); // 52 99 98 100 99
 console.log(atm.valor); // 13605
 // retirada válida
-atm.retirarValor(10985); // 52 cédulas de R$ 100,00; 99 cédulas de R$ 50,00; 41 cédulas de R$ 20,00; 1 cédulas de R$ 20,00 e 1 cédula de R$ 5,00
+atm.retirarValor(10985); // 52 cédulas de R$ 100,00; 99 cédulas de R$ 50,00; 41 cédulas de R$ 20,00; 1 cédulas de R$ 10,00 e 1 cédula de R$ 5,00
 console.log(atm.notas100, atm.notas50, atm.notas20, atm.notas10, atm.notas5); // 0 0 57 99 98
+console.log(atm.valor); // 2620
+// retirada válida
+atm.retirarValor(2600); // 57 cédulas de R$ 20,00; 99 cédulas de R$ 10,00 e 94 cédulas de R$ 5,00
+console.log(atm.notas100, atm.notas50, atm.notas20, atm.notas10, atm.notas5); // 0 0 0 0 4
+console.log(atm.valor); // 20
