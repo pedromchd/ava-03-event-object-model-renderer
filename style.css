@@ -1,0 +1,93 @@
+body {
+  /* background: hsl(0, 0%, 10%); */
+  /* background: linear-gradient(45deg, #3F2B96 0%, #A8C0FF 100%); */
+  background: linear-gradient(45deg, #a770ef 0%, #cf8bf3 50%, #fdb99b 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-evenly;
+}
+
+aside {
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+aside > div {
+  background: #3f2c9640;
+  width: 5%;
+  flex-grow: 1;
+}
+
+aside form {
+  background: linear-gradient(45deg, #cc71bd 0%, #ec9afc 50%, #c871f0 100%);
+  padding: 1.5rem;
+  border-radius: 0.75rem 2.75rem 0.75rem;
+
+  user-select: none;
+}
+
+aside form {
+  /* padding-top: 1rem; */
+  padding-bottom: 2.4rem; /* absolute buttons */
+}
+
+aside form fieldset {
+  background: #3f2c9640;
+  /* padding: 1.5rem; */
+  /* border: 0.2rem solid #3F2B96; */
+  /* border-radius: 0 2.25rem 0.75rem; */
+  border-radius: 0 2.25rem;
+
+  display: flex;
+  flex-direction: column;
+  position: relative; /* absolute buttons */
+}
+
+aside form fieldset legend {
+  /* background: hsla(251, 55%, 38%, 25%); */
+  background: linear-gradient(180deg, #3f2c9640 50%, #00000000 0%);
+  padding: .5rem;
+  border-radius: .75rem;
+
+  /* position: absolute; */
+  /* top: -1rem; */
+  /* left: 0; */
+}
+
+aside form fieldset .input {
+  margin: .5rem 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+aside form fieldset div:nth-last-child(2) {
+  margin-bottom: 2.5rem; /* absolute buttons */
+}
+
+aside form fieldset .buttons {
+  background: linear-gradient(0deg, #3f2c9640 34%, #11111100 0%);
+  padding: .5rem .25rem;
+  border-radius: .75rem;
+
+  position: absolute;
+  bottom: -1rem;
+  right: 0; /* absolute buttons */
+
+  /* margin: 0.5rem 1.5rem 1.25rem; */
+
+  display: flex;
+  justify-content: end;
+}
+
+aside form fieldset .buttons button {
+  padding: .5em .75em;
+  /* margin-inline-start: .5rem; */ /* absolute buttons */
+  margin-inline: .25rem;
+}
