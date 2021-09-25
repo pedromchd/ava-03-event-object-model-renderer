@@ -6,33 +6,38 @@ body {
   min-height: 100vh;
 
   display: flex;
-  /* align-items: center; */
+  align-items: center;
   justify-content: space-evenly;
 }
 
-aside {
-  /* height: 100vh; */
+/* aside {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
+} */
 
-aside > div {
+/* aside > div {
   background: #3f2c9640;
+  border: .2rem solid #3f2c96;
+  border-block: 0;
   width: 5%;
   flex-grow: 1;
-}
+} */
 
 aside form {
   background: linear-gradient(45deg, #cc71bd 0%, #ec9afc 50%, #c871f0 100%);
   padding: 1.5rem;
-  border-radius: 0.75rem 2.75rem 0.75rem;
+  border: .2rem solid #3f2c96;
+  border-radius: 0.75rem 2.75rem;
+  width: 20vw;
+  max-width: 500px;
 
   user-select: none;
-}
+  color: #fff;
+  text-shadow: 1px 1px 1px #3f2c96;
 
-aside form {
   /* padding-top: 1rem; */
   padding-bottom: 2.4rem; /* absolute buttons */
 }
@@ -54,25 +59,55 @@ aside form fieldset legend {
   background: linear-gradient(180deg, #3f2c9640 50%, #00000000 0%);
   padding: .5rem;
   border-radius: .75rem;
+  margin-bottom: .5rem;
 
   /* position: absolute; */
   /* top: -1rem; */
   /* left: 0; */
+
+  font-size: 1.25em;
 }
 
 aside form fieldset .input {
-  margin: .5rem 1.5rem;
+  margin: .75rem 1.5rem;
 
   display: flex;
   flex-direction: column;
+
+  position: relative;
 }
 
-aside form fieldset div:nth-last-child(2) {
+aside form fieldset .input:nth-last-child(2) {
   margin-bottom: 2.5rem; /* absolute buttons */
 }
 
+aside form fieldset .input label {
+  position: absolute;
+  bottom: .5rem;
+  transition: .2s;
+}
+
+aside form fieldset .input input {
+  background: linear-gradient(0deg, #3f2c9640 25%, #00000000 0%);
+  border: 0;
+  border-bottom: .15rem solid #3f2c96;
+  z-index: 100;
+  color: #fff;
+}
+
+aside form fieldset .input input:focus {
+  /* color: #fff; */
+  outline: none;
+}
+
+aside form fieldset .input input:focus ~ label, .input input:valid + label {
+  transform: translateY(-.75rem);
+  font-size: .8em;
+  margin-bottom: .15em;
+}
+
 aside form fieldset .buttons {
-  background: linear-gradient(0deg, #3f2c9640 34%, #11111100 0%);
+  background: linear-gradient(0deg, #3f2c9640 33.3%, #00000000 0%);
   padding: .5rem .25rem;
   border-radius: .75rem;
 
@@ -87,7 +122,13 @@ aside form fieldset .buttons {
 }
 
 aside form fieldset .buttons button {
+  background: #3f2c96c0;
   padding: .5em .75em;
   /* margin-inline-start: .5rem; */ /* absolute buttons */
   margin-inline: .25rem;
+
+  color: #fff;
+  border: .15rem solid #3f2c96;
+  border-radius: .5em;
+  cursor: pointer;
 }
