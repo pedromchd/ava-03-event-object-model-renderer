@@ -7,7 +7,7 @@ body {
 
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
 
   perspective: 1000;
   backface-visibility: hidden;
@@ -29,15 +29,24 @@ body {
   flex-grow: 1;
 } */
 
+aside {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  width: 50vw;
+  max-height: 100vh;
+}
+
 aside form {
   background: linear-gradient(45deg, #cc71bd 0%, #ec9afc 50%, #c871f0 100%);
   padding: 1.5rem;
-  border: .2rem solid #3f2c96;
+  /* border: .2rem solid #3f2c96; */
   border-radius: 0.75rem 2.75rem;
   width: 20vw;
   max-width: 500px;
+  box-shadow: 0 0 1rem #3f2c96c0;
 
-  user-select: none;
+  /* user-select: none; */
   color: #fff;
   text-shadow: 1px 1px 1px #3f2c96;
 
@@ -92,6 +101,7 @@ aside form fieldset .input.small {
 
 aside form fieldset .input.small small {
   font-size: .8em;
+  /* font-weight: thin; */
   text-shadow: 0 0 0;
 }
 
@@ -100,7 +110,12 @@ aside form fieldset .input.small small a {
   color: #3f2c96;
 }
 
+aside form fieldset .input.small small a:hover {
+  text-decoration: underline;
+}
+
 aside form fieldset .input label {
+  user-select: none;
   position: absolute;
   bottom: .5rem;
   transition: .2s;
@@ -165,4 +180,71 @@ aside form fieldset .buttons button:hover {
 
 aside form fieldset .buttons button:active {
   transform: scale(0.95);
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+
+  width: 50vw;
+  max-height: 100vh;
+
+  overflow-y: scroll;
+}
+
+article main {
+  background: #3f2c9640;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  /* border: .2rem solid #3f2c96; */
+
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem #3f2c9640;
+
+  width: 500px;
+  position: relative;
+  display: flex;
+
+  color: #fff;
+  text-shadow: 1px 1px 1px #3f2c96;
+}
+
+article main img.cover {
+  box-shadow: 0 0 1.5rem #3f2c96c0;
+  height: 16rem;
+  user-select: none;
+}
+
+article main > section {
+  background: linear-gradient(0deg, #a770ef 0%, #cf8bf3 50%, #E99BFD 50%, #fdb99b 100%);
+  box-shadow: 0 0 1.5rem #3f2c96c0;
+  flex-grow: 1;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #3f2c96c0;
+  border-radius: 1rem;
+}
+
+/* ::-webkit-scrollbar-track {
+  background:#3f2c9640;
+} */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #3f2c96c0 #00000000;
+}
+
+::selection {
+  background: #3f2c9640;
 }
