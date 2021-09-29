@@ -15,7 +15,7 @@
 <body>
   <aside>
     <form autocomplete="off">
-      <legend>MEUS ANIMES</legend>
+      <legend><h1>MEUS ANIMES</h1></legend>
       <div>
         <label for="anime">ANIME</label>
         <input type="text" name="anime" required autofocus>
@@ -34,12 +34,10 @@
       </div>
       <div>
         <label for="link">LINK</label>
-        <input type="link" name="link" required>
+        <input type="link" name="link" required aria-describedby="link">
+        <small id="link">Use <a href="http://myanimelist.net" target="_blank">myanimelist.net</a> para sua pesquisa.</small>
       </div>
-      <div>
-        <small>Use <a href="http://myanimelist.net" target="_blank">myanimelist.net</a> para sua pesquisa.</small>
-      </div>
-      <div>
+      <div id="button">
         <button type="submit" value="1">ADICIONAR</button>
         <button type="reset" value="0"><i class="fa fa-trash"></i></button>
       </div>
