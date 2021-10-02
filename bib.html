@@ -15,7 +15,7 @@
 <body>
   <aside>
     <form autocomplete="off">
-      <legend><h1>MEUS ANIMES</h1></legend>
+      <legend><h2>MEUS ANIMES</h2></legend>
       <div>
         <label for="anime">ANIME</label>
         <input type="text" name="anime" required autofocus>
@@ -46,18 +46,23 @@
 
   <article>
     <main>
-      <img src="https://cdn.myanimelist.net/images/anime/1611/111915.jpg">
-      <img src="heart.png">
-      <section>
-        <a href="https://myanimelist.net/anime/42897/Horimiya" target="_blank"><h1>Horimiya</h1></a>
-        <p>Estúdio: CloverWorks</p>
-        <p>Gênero: Comédia, Romance, Slice of Life</p>
-        <section>
-          <img src="star.png" value="0">
-          <img src="star.png" value="1">
-          <img src="star.png" value="2">
-          <img src="star.png" value="3">
-          <img src="star.png" value="4">
+      <img src="https://cdn.myanimelist.net/images/anime/1611/111915.jpg" class="cover">
+      <img src="heart.png" class="fav" value="0">
+      <section class="container">
+        <section class="info">
+          <a href="https://myanimelist.net/anime/42897/Horimiya" target="_blank"><h1>Horimiya</h1></a>
+          <p>Estúdio: CloverWorks</p>
+          <p>Gênero: Comédia, Romance, Slice of Life</p>
+        </section>
+        <section class="user">
+          <button value="0" class="status">AAA</button>
+          <section class="rating">
+            <img src="star.png" class="star" value="0">
+            <img src="star.png" class="star" value="1">
+            <img src="star.png" class="star" value="2">
+            <img src="star.png" class="star" value="3">
+            <img src="star.png" class="star" value="4">
+          </section>
         </section>
       </section>
     </main>

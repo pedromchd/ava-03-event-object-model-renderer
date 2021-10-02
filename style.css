@@ -30,6 +30,7 @@ form {
   max-width: 500px;
   padding: 1.5rem;
   border-radius: .5rem 3rem;
+  transition: width .25s;
 }
 
 form div {
@@ -43,7 +44,7 @@ form div {
   justify-content: end;
 }
 
-h1 {
+h2 {
   font-size: 1.5em;
 }
 
@@ -70,6 +71,10 @@ button {
   transition: .1s;
 }
 
+button:hover {
+  filter: brightness(.9);
+}
+
 button:active {
   transform: scale(.95);
 }
@@ -81,10 +86,89 @@ button:active {
   border-radius: .5rem;
 }
 
-/* off */
-img {
-  display: none;
+main {
+  background: #fff;
+  width: 500px;
+  margin: 1rem;
+  border-radius: 0 3rem .5rem 0;
+  display: flex;
+  position: relative;
 }
+
+img {
+  user-select: none;
+}
+
+img.cover {
+  height: 12rem;
+}
+
+img.fav {
+  height: 3.5rem;
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  transition: .1s;
+}
+
+img.star {
+  height: 2rem;
+  filter: saturate(0);
+  transition: .05s;
+}
+
+img.fav:hover,
+img.star:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+img.fav:active,
+img.star:active {
+  transform: scale(1);
+}
+
+img.fav[value="0"] {
+  filter: saturate(0) brightness(1.5);
+}
+
+section.container {
+  flex-grow: 1;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h1 {
+  font-size: 2.25em;
+  margin-bottom: .5em;
+}
+
+section.user {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  /* align-items: flex-end; */
+}
+
+button.status {
+  padding: .75em 1em;
+  border: 1px solid #000;
+  border-radius: .5rem;
+}
+
+/* button.status[value="0"] {
+  background: chartreuse;
+}
+
+button.status[value="1"] {
+  background: chocolate;
+}
+
+button.status[value="3"] {
+  background: cyan;
+} */
 
 ::-webkit-scrollbar {
   width: .5rem;
