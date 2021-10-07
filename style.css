@@ -145,14 +145,15 @@ img.fav {
 img.star {
   height: 2rem;
   transition: .1s;
+  filter: saturate(0);
 }
 
 img.fav[value="0"] {
   filter: saturate(0) brightness(1.5);
 }
 
-img.star[value="0"] {
-  filter: saturate(0);
+img.star.color {
+  filter: none;
 }
 
 img.fav:hover,
