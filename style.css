@@ -1,7 +1,7 @@
 :root {
-  --main: #340388;
-  --side: #5B05EF;
   --ligth: #9156f8;
+  --side: #5B05EF;
+  --main: #340388;
 }
 
 body {
@@ -56,8 +56,9 @@ form div {
 }
 
 h1 {
-  font-size: 2.25em;
-  margin-bottom: .5em;
+  font-size: 1.75em;
+  margin-bottom: .5rem;
+  line-height: 1.15em;
 }
 
 h2 {
@@ -113,13 +114,16 @@ button:active {
 }
 
 main {
-  background: #fff;
+  color: #fff;
+  background: hsla(0, 0%, 0%, .75);
   width: 500px;
   margin: 1rem;
   border-radius: 0 1rem 1rem 0;
   display: flex;
+  align-items: center;
   position: relative;
   box-shadow: 0 0 10px var(--side);
+  border-left: 5px solid var(--side);
 }
 
 img {
@@ -128,7 +132,6 @@ img {
 
 img.cover {
   height: 12rem;
-  border-left: 5px solid var(--side);
 }
 
 img.fav {
@@ -168,6 +171,7 @@ section.container {
   margin: 1rem;
   display: flex;
   flex-direction: column;
+  align-self: stretch;
   justify-content: space-between;
 }
 
@@ -175,10 +179,12 @@ section.user {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
+  margin-top: .5rem;
 }
 
 section.info a {
-  color: #000;
+  color: #fff;
+  transition: .1s;
 }
 
 button.status[value="0"] {
@@ -207,5 +213,5 @@ button.status[value="2"] {
 }
 
 ::selection {
-  background: hsla(262, 96%, 27%, 0.15);
+  background: hsla(0, 0%, 0%, 0.25);
 }
