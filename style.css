@@ -4,6 +4,14 @@
   --main: #340388;
 }
 
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* box-sizing: border-box; */
+  perspective: 1000;
+  backface-visibility: hidden;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 16px;
@@ -13,9 +21,6 @@ body {
   height: 100vh;
   display: flex;
   align-items: center;
-  box-sizing: border-box;
-  perspective: 1000;
-  backface-visibility: hidden;
 }
 
 aside {
@@ -57,8 +62,8 @@ form div {
 
 h1 {
   font-size: 1.75em;
-  margin-bottom: .5rem;
   line-height: 1.15em;
+  margin-bottom: .5rem;
 }
 
 h2 {
@@ -66,8 +71,8 @@ h2 {
 }
 
 a {
-  text-decoration: none;
   color: var(--ligth);
+  text-decoration: none;
 }
 
 a:hover,
@@ -91,14 +96,14 @@ small {
 }
 
 button {
-  cursor: pointer;
-  transition: .1s;
   color: #fff;
   text-shadow: 1px 1px 1px #000;
   background: var(--ligth);
+  padding: .75em 1em;
   border: none;
   border-radius: .5rem;
-  padding: .75em 1em;
+  cursor: pointer;
+  transition: .1s;
 }
 
 button:hover {
@@ -116,14 +121,14 @@ button:active {
 main {
   color: #fff;
   background: hsla(0, 0%, 0%, .75);
+  box-shadow: 0 0 10px var(--side);
+  border-left: 5px solid var(--side);
+  border-radius: 0 1rem 1rem 0;
   width: 500px;
   margin: 1rem;
-  border-radius: 0 1rem 1rem 0;
   display: flex;
   align-items: center;
   position: relative;
-  box-shadow: 0 0 10px var(--side);
-  border-left: 5px solid var(--side);
 }
 
 img {
@@ -148,7 +153,7 @@ img.star {
   filter: saturate(0);
 }
 
-img.fav[value="0"] {
+img.fav[data-value="0"] {
   filter: saturate(0) brightness(1.5);
 }
 
@@ -168,8 +173,8 @@ img.star:active {
 }
 
 section.container {
-  flex-grow: 1;
   margin: 1rem;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-self: stretch;
@@ -177,10 +182,10 @@ section.container {
 }
 
 section.user {
+  margin-top: .5rem;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
-  margin-top: .5rem;
 }
 
 section.info a {
@@ -188,16 +193,28 @@ section.info a {
   transition: .1s;
 }
 
-button.status[value="0"] {
-  background: var(--ligth);
+button.status {
+  width: 100px;
 }
 
-button.status[value="1"] {
-  background: var(--side);
+button.status[data-value="0"] {
+  background: hsl(225, 100%, 75%);
 }
 
-button.status[value="2"] {
-  background: var(--main);
+button.status[data-value="1"] {
+  background: hsl(250, 100%, 50%);
+}
+
+button.status[data-value="2"] {
+  background: hsl(275, 100%, 25%);
+}
+
+button.clear {
+  font-size: 1rem;
+  background: hsl(0, 50%, 50%);
+  position: fixed;
+  bottom: .5rem;
+  right: 1rem;
 }
 
 ::-webkit-scrollbar {

@@ -7,9 +7,13 @@ export const bib = {
     this.list[i].fav = v;
   },
   rate(v, i) {
-    this.list[i].stars = v;
+    if (this.list[i].stars === v) this.list[i].stars = 0;
+    else this.list[i].stars = v;
   },
   update(i) {
     this.list[i].status = ++this.list[i].status%3;
+  },
+  clear() {
+    this.list = [];
   }
 };
