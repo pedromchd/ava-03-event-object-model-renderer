@@ -22,6 +22,7 @@ form.addEventListener('submit', e => {
     stars: 0,
     status: 0
   });
+  // localStorage.lista = JSON.stringify(bib.list);
   display(bib);
 });
 
