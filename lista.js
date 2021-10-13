@@ -2,7 +2,7 @@ import { bib } from "./bib.js";
 
 document.addEventListener('DOMContentLoaded', () => {
   JSON.parse(localStorage.lista).forEach(anime => {
-    bib.new(anime);
+    bib.add(anime);
   });
   display(bib);
 });
@@ -12,7 +12,7 @@ const article = document.querySelector('article');
 
 form.addEventListener('submit', e => {
   e.preventDefault();
-  bib.new({
+  bib.add({
     anime: form.anime.value,
     estudio: form.estudio.value,
     genero: form.genero.value,
@@ -22,8 +22,8 @@ form.addEventListener('submit', e => {
     stars: 0,
     status: 0
   });
-  // localStorage.lista = JSON.stringify(bib.list);
   display(bib);
+  form.reset();
 });
 
 article.addEventListener('click', e => {
@@ -39,8 +39,13 @@ article.addEventListener('click', e => {
   if (e.target.classList.contains('status')) {
     bib.update(index);
   } else
+  if (e.target.classList.contains('del')) {
+    if (confirm('Remover anime da lista?')) {
+      bib.remove(index);
+    }
+  } else
   if (e.target.classList.contains('clear')) {
-    if(confirm('Limpar lista?')) {
+    if (confirm('Limpar toda a lista?')) {
       bib.clear();
       localStorage.clear();
     }
@@ -49,8 +54,9 @@ article.addEventListener('click', e => {
 });
 
 function display(obj) {
-  article.innerHTML =
-    '<button class="clear"><i class="fa fa-trash clear"></i></button>';
+  if (!obj.list.length) article.style.display = 'none';
+  else article.style.display = 'flex';
+  article.innerHTML = '<button class="clear"><i class="fa fa-trash clear"></i></button>';
   obj.list.forEach((anime, index) => {
     let rating = `
       <img src="star.png" class="star" data-value="1">
@@ -63,7 +69,7 @@ function display(obj) {
     }
     let main = document.createElement('main');
     main.innerHTML = `
-      <img src="${anime.capa}" class="cover">
+      <img src="${anime.capa}" class="cover" onerror="this.src = 'gojo.jpg'">
       <section class="container">
         <section class="info">
           <a href="${anime.link}" target="_blank"><h1>${anime.anime}</h1></a>
@@ -72,6 +78,7 @@ function display(obj) {
         </section>
         <section class="user" data-value="${index}">
           <img src="heart.png" class="fav" data-value="${anime.fav}">
+          <img src="cancel.png" class="del">
           <button data-value="${anime.status}" class="status">
             ${["Na lista", "Assistindo", "Finalizado"][anime.status]}
           </button>
