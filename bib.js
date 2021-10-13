@@ -1,7 +1,10 @@
 export const bib = {
   list: [],
-  new(obj) {
-    this.list.push(obj);
+  add(e) {
+    this.list.push(e);
+  },
+  remove(i) {
+    this.list.splice(i, 1);
   },
   favorite(v, i) {
     this.list[i].fav = v;
