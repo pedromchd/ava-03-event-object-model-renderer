@@ -172,7 +172,7 @@ img.star {
 }
 
 img.fav[data-value="0"] {
-  filter: saturate(0) brightness(1.5);
+  filter: saturate(0) brightness(1.75);
 }
 
 img.star.color {
