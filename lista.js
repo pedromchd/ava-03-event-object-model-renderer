@@ -1,6 +1,7 @@
 import { bib } from "./bib.js";
 
 document.addEventListener('DOMContentLoaded', () => {
+  if (!localStorage.length) return;
   JSON.parse(localStorage.lista).forEach(anime => {
     bib.add(anime);
   });
